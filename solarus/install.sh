@@ -68,7 +68,7 @@ fi
 		-s '//systemList/system[last()]' -t elem -n 'release' -v '2020'\
 		-s '//systemList/system[last()]' -t elem -n 'hardware' -v 'Game Engine'\
 		-s '//systemList/system[last()]' -t elem -n 'extension' -v '.solarus'\
-		-s '//systemList/system[last()]' -t elem -n 'command' -v '/storage/roms/gamedata/solarus.sh %ROM%'\
+		-s '//systemList/system[last()]' -t elem -n 'command' -v '/storage/roms/gamedata/solarus/solarus.sh %ROM%'\
 		-s '//systemList/system[last()]' -t elem -n 'platform' -v 'solarus'\
 		-s '//systemList/system[last()]' -t elem -n 'theme' -v 'solarus'\
 		$CFG
