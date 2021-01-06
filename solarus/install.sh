@@ -5,8 +5,8 @@
 INSTALLPATH="/storage/roms/gamedata"
 PKG_NAME="solarus"
 PKG_FILE="solarus-gamedata.zip"
-PKG_VERSION=1.0"
-PKG_SHASUM="e8eb7e997fb8478b04a1c28a32a1ad84708a586a524bd256d7c4df41c8977029"
+PKG_VERSION="1.0"
+PKG_SHASUM="8bce037e4e56ab2c6e3aacc171355122f85e3e17e220170e102260b2a0f25f91"
 SOURCEPATH=$(pwd)
 CFG="/storage/.emulationstation/es_systems.cfg"
 START_SCRIPT="$BINARY.sh"
@@ -69,7 +69,7 @@ fi
 		-s '//systemList/system[last()]' -t elem -n 'release' -v '2020'\
 		-s '//systemList/system[last()]' -t elem -n 'hardware' -v 'Game Engine'\
 		-s '//systemList/system[last()]' -t elem -n 'extension' -v '.solarus'\
-		-s '//systemList/system[last()]' -t elem -n 'command' -v "/emuelec/scripts/$START_SCRIPT %ROM%"\
+		-s '//systemList/system[last()]' -t elem -n 'command' -v '/emuelec/scripts/$START_SCRIPT %ROM%'\
 		-s '//systemList/system[last()]' -t elem -n 'platform' -v 'solarus'\
 		-s '//systemList/system[last()]' -t elem -n 'theme' -v 'solarus'\
 		$CFG
