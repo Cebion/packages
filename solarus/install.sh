@@ -4,8 +4,8 @@
 
 INSTALLPATH="/storage/roms/gamedata"
 PKG_NAME="solarus"
-PKG_FILE="solarus.zip"
-PKG_VERSION=1.0.0"
+PKG_FILE="solarus-gamedata.zip"
+PKG_VERSION=1.0"
 PKG_SHASUM="e8eb7e997fb8478b04a1c28a32a1ad84708a586a524bd256d7c4df41c8977029"
 SOURCEPATH=$(pwd)
 CFG="/storage/.emulationstation/es_systems.cfg"
@@ -20,7 +20,7 @@ fi
 
 cd ${INSTALLPATH}/${PKG_NAME}
 
-curl -Lo ${PKG_FILE} https://github.com/cebion/packages/releases/download/${PKG_VERSION}/${PKG_FILE}
+curl -Lo ${PKG_FILE} https://github.com/Cebion/packages/releases/download/${PKG_VERSION}/${PKG_FILE}
 BINSUM=$(sha256sum ${PKG_FILE} | awk '{print $1}')
 if [ ! "${PKG_SHASUM}" == "${BINSUM}" ]
 then
