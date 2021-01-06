@@ -28,18 +28,17 @@ then
   exit 1
 fi
 
-unzip -o ${PKG_NAME}
-mv solarus/* .
-rmdir solarus
+unzip -o ${PKG_FILE}
+rm ${PKG_FILE}
 
 ### Create the start script
-cat <<EOF >${INSTALLPATH}/"solarus.sh"
-export LD_LIBRARY_PATH=${INSTALLPATH}/${PKG_NAME}:/usr/lib
+cat <<EOF >${INSTALLPATH}/${PKG_NAME}/"solarus.sh"
+export LD_LIBRARY_PATH=${INSTALLPATH}/${PKG_NAME}/data:/usr/lib
 cd ${INSTALLPATH}/${PKG_NAME}
-  ./bin/solarus-run $1 
+  ./bin/solarus-run $1
 fi
 ret_error=\$?
-[[ "\$ret_error" != 0 ]] && (echo "Error executing Solarus.  Please check that you copied your Quest File to ${INSTALLPATH}/${PKG_NAME}" >/tmp/logs/emuelec.log)
+[[ "\$ret_error" != 0 ]] && (echo "Error executing Solarus.  Please check that you copied your Quest File to /storage/roms/solarus" >/tmp/logs/es_log.txt)
 EOF
 
 ### Add Solarus images
@@ -50,7 +49,7 @@ fi
 
 for image in system-solarus.png  system-solarus-thumb.png
 do
-  cp "${SOURCEPATH}/${PKG_NAME}/${image}" "${INSTALLPATH}/images"
+  cp "${SOURCEPATH}/${image}" "${INSTALLPATH}/images"
 done
 
 ### Add Solarus to the game list
@@ -69,7 +68,7 @@ fi
 		-s '//systemList/system[last()]' -t elem -n 'release' -v '2020'\
 		-s '//systemList/system[last()]' -t elem -n 'hardware' -v 'Game Engine'\
 		-s '//systemList/system[last()]' -t elem -n 'extension' -v '.solarus'\
-		-s '//systemList/system[last()]' -t elem -n 'command' -v '/emuelec/scripts/$START_SCRIPT %ROM%'\
+		-s '//systemList/system[last()]' -t elem -n 'command' -v '/storage/roms/gamedata/solarus.sh %ROM%'\
 		-s '//systemList/system[last()]' -t elem -n 'platform' -v 'solarus'\
 		-s '//systemList/system[last()]' -t elem -n 'theme' -v 'solarus'\
 		$CFG
