@@ -2,12 +2,15 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
 # Copyright (C) 2020-present Fewtarius
 
-INSTALLPATH="/storage/roms/solarus"
+INSTALLPATH="/storage/roms/gamedata/solarus"
 PKG_NAME="solarus"
 PKG_FILE="solarus.zip"
 PKG_VERSION=1.0.0"
 PKG_SHASUM="e8eb7e997fb8478b04a1c28a32a1ad84708a586a524bd256d7c4df41c8977029"
 SOURCEPATH=$(pwd)
+CFG="/storage/.emulationstation/es_systems.cfg"
+START_SCRIPT="$BINARY.sh"
+BINARY="./bin/solarus-run"
 
 ### Test and make the full path if necessary.
 if [ ! -d "${INSTALLPATH}/${PKG_NAME}" ]
@@ -51,20 +54,22 @@ do
 done
 
 ### Add Solarus to the game list
-if [ ! "$(grep -q 'Solarus' ${INSTALLPATH}/gamelist.xml)" ]
+if grep -q '<name>solarus</name>' "$CFG"
 then
-	### Add to the game list
-	xmlstarlet ed --omit-decl --inplace \
-		-s '//gameList' -t elem -n 'game' \
-		-s '//gameList/game[last()]' -t elem -n 'path'        -v './Solarus.sh'\
-		-s '//gameList/game[last()]' -t elem -n 'name'        -v 'Solarus'\
-		-s '//gameList/game[last()]' -t elem -n 'desc'        -v 'Solarus is a free and open-source 2D game engine written in c++.'\
-		-s '//gameList/game[last()]' -t elem -n 'image'       -v './images/system-solarus.png'\
-		-s '//gameList/game[last()]' -t elem -n 'video'       -v './images/system-solarus.mp4'\
-		-s '//gameList/game[last()]' -t elem -n 'thumbnail'   -v './images/system-solarus-thumb.png'\
-		-s '//gameList/game[last()]' -t elem -n 'rating'      -v '1.0'\
-		-s '//gameList/game[last()]' -t elem -n 'releasedate' -v '2020'\
-		-s '//gameList/game[last()]' -t elem -n 'developer'   -v 'Solarus'\
-		-s '//gameList/game[last()]' -t elem -n 'publisher'   -v 'Solarus'\
-		${INSTALLPATHINSTALLPATH}/gamelist.xml
+	xmlstarlet ed -L -P -d "/systemList/system[name='solarus']" $CFG
 fi
+
+	echo 'Adding Solarus to systems list'
+	xmlstarlet ed --omit-decl --inplace \
+		-s '//systemList' -t elem -n 'system' \
+		-s '//systemList/system[last()]' -t elem -n 'name' -v 'solarus'\
+		-s '//systemList/system[last()]' -t elem -n 'fullname' -v 'Solarus Game Engine'\
+		-s '//systemList/system[last()]' -t elem -n 'path' -v '/storage/roms/solarus'\
+		-s '//systemList/system[last()]' -t elem -n 'manufacturer' -v 'Solarus'\
+		-s '//systemList/system[last()]' -t elem -n 'release' -v '2020'\
+		-s '//systemList/system[last()]' -t elem -n 'hardware' -v 'Game Engine'\
+		-s '//systemList/system[last()]' -t elem -n 'extension' -v '.solarus'\
+		-s '//systemList/system[last()]' -t elem -n 'command' -v "/emuelec/scripts/$START_SCRIPT %ROM%"\
+		-s '//systemList/system[last()]' -t elem -n 'platform' -v 'solarus'\
+		-s '//systemList/system[last()]' -t elem -n 'theme' -v 'solarus'\
+		$CFG
