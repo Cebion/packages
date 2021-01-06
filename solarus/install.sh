@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
 # Copyright (C) 2020-present Fewtarius
 
-INSTALLPATH="/storage/roms/gamedata/solarus"
+INSTALLPATH="/storage/roms/gamedata"
 PKG_NAME="solarus"
 PKG_FILE="solarus.zip"
 PKG_VERSION=1.0.0"
