@@ -6,7 +6,7 @@ INSTALLPATH="/storage/roms/solarus"
 PKG_NAME="solarus"
 PKG_FILE="solarus.zip"
 PKG_VERSION=1.0.0"
-PKG_SHASUM="sha256"
+PKG_SHASUM="e8eb7e997fb8478b04a1c28a32a1ad84708a586a524bd256d7c4df41c8977029"
 SOURCEPATH=$(pwd)
 
 ### Test and make the full path if necessary.
