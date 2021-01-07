@@ -42,6 +42,8 @@ cd ${INSTALLPATH}/${PKG_NAME}
 
 ret_error=\$?
 [[ "\$ret_error" != 0 ]] && (echo "Error executing Solarus.  Please check that you copied your Quest File to /storage/roms/solarus" >/tmp/logs/es_log.txt)
+jslisten stop
+
 EOF
 
 ### Add Solarus images
