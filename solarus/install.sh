@@ -39,9 +39,6 @@ export LD_LIBRARY_PATH=${INSTALLPATH}/${PKG_NAME}/data:/usr/lib
 cd ${INSTALLPATH}/${PKG_NAME}
   ./bin/solarus-run -joypad-deadzone=32767 -quit-combo=6+7 \$1
 
-ret_error=\$?
-[[ "\$ret_error" != 0 ]] && (echo "Error executing Solarus.  Please check that you copied your Quest File to /storage/roms/solarus" >/tmp/logs/es_log.txt)
-
 EOF
 
 ### Add Solarus images
