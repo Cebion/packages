@@ -35,14 +35,12 @@ rm ${PKG_FILE}
 cat <<EOF >${INSTALLPATH}/${PKG_NAME}/"solarus.sh"
 #!/bin/bash
 source /etc/profile
-jslisten set "solarus-run"
 export LD_LIBRARY_PATH=${INSTALLPATH}/${PKG_NAME}/data:/usr/lib
 cd ${INSTALLPATH}/${PKG_NAME}
-  ./bin/solarus-run \$1
+  ./bin/solarus-run -joypad-deadzone=32767 -quit-combo=6+7 \$1
 
 ret_error=\$?
 [[ "\$ret_error" != 0 ]] && (echo "Error executing Solarus.  Please check that you copied your Quest File to /storage/roms/solarus" >/tmp/logs/es_log.txt)
-jslisten stop
 
 EOF
 
