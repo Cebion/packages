@@ -5,11 +5,10 @@
 
 INSTALLPATH="/storage/roms/ports"
 PKG_NAME="blockattack"
-PKG_FILE="blockattack.zip"
-PKG_VERSION="1.0.0"
-PKG_SHASUM="9d02cf623456972b5d26c8e4349822378e94f78d0e237c1e920c0fc9dbb8c5e1"
+PKG_FILE="blockattack-gamedata.zip"
+PKG_VERSION="1.0"
+PKG_SHASUM="67a977c7c2b9c56177d331d33b469fd2ff110ce111c4302537ea8a0ad9279fd7"
 SOURCEPATH=$(pwd)
-
 ### Test and make the full path if necessary.
 if [ ! -d "${INSTALLPATH}/${PKG_NAME}" ]
 then
@@ -26,15 +25,16 @@ then
   exit 1
 fi
 
-unzip -o ${PKG_NAME}
+unzip -o ${PKG_FILE}
 rm ${PKG_FILE}
 
 ### Create the start script
 cat <<EOF >${INSTALLPATH}/"Blockattack.sh"
+#!/bin/bash
+source /etc/profile
 export LD_LIBRARY_PATH=${INSTALLPATH}/${PKG_NAME}/lib:/usr/lib
 
 cd ${INSTALLPATH}/${PKG_NAME}
-
   ./blockattack
 
 
