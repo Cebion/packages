@@ -47,7 +47,7 @@ fi
 
 for image in system-iortcw.png  system-iortcw-thumb.png
 do
-  cp "${SOURCEPATH}/${image}" "${INSTALLPATH}/images"
+  cp "${SOURCEPATH}/${PKG_NAME}/${image}" "${INSTALLPATH}/images"
 done
 
 ### Add Iortcw to the game list

@@ -48,7 +48,7 @@ fi
 
 for image in system-blockattack.png  system-blockattack-thumb.png
 do
-  cp "${SOURCEPATH}/${image}" "${INSTALLPATH}/images"
+  cp "${SOURCEPATH}/${PKG_NAME}/${image}" "${INSTALLPATH}/images"
 done
 
 ### Add Blockattack to the game list

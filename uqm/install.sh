@@ -47,7 +47,7 @@ fi
 
 for image in system-uqm.png  system-uqm-thumb.png
 do
-  cp "${SOURCEPATH}/${image}" "${INSTALLPATH}/images"
+  cp "${SOURCEPATH}/${PKG_NAME}/${image}" "${INSTALLPATH}/images"
 done
 
 ### Add UQM to the game list

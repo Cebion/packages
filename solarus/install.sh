@@ -49,7 +49,7 @@ fi
 
 for image in system-solarus.png  system-solarus-thumb.png
 do
-  cp "${SOURCEPATH}/${image}" "${INSTALLPATH}/images"
+  cp "${SOURCEPATH}/${PKG_NAME}/${image}" "${INSTALLPATH}/images"
 done
 
 ### Add Solarus to the game list
