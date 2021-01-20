@@ -51,7 +51,7 @@ do
 done
 
 ### Add Iortcw to the game list
-if [ ! "$(grep -q 'Iortcw' ${INSTALLPATH}/gamelist.xml)" ]
+if [ ! "$(grep -q 'Return to Castle Wolfenstein' ${INSTALLPATH}/gamelist.xml)" ]
 then
 	### Add to the game list
 	xmlstarlet ed --omit-decl --inplace \
@@ -61,6 +61,7 @@ then
 		-s '//gameList/game[last()]' -t elem -n 'desc'        -v 'Return to Castle Wolfenstein is a first-person shooter video game published by Activision.'\
 		-s '//gameList/game[last()]' -t elem -n 'image'       -v './images/system-iortcw.png'\
 		-s '//gameList/game[last()]' -t elem -n 'thumbnail'   -v './images/system-iortcw-thumb.png'\
+                -s '//gameList/game[last()]' -t elem -n 'video'       -v './videos/system-iortcw.mp4'\
 		-s '//gameList/game[last()]' -t elem -n 'rating'      -v '4.0'\
 		-s '//gameList/game[last()]' -t elem -n 'releasedate' -v '2001'\
 		-s '//gameList/game[last()]' -t elem -n 'developer'   -v 'Gray Matter Interactive'\

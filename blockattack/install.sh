@@ -62,6 +62,7 @@ then
 		-s '//gameList/game[last()]' -t elem -n 'desc'        -v 'A Tetris Attack Clone.'\
 		-s '//gameList/game[last()]' -t elem -n 'image'       -v './images/system-blockattack.png'\
 		-s '//gameList/game[last()]' -t elem -n 'thumbnail'   -v './images/system-blockattack-thumb.png'\
+                -s '//gameList/game[last()]' -t elem -n 'video'       -v './videos/system-blockattack.mp4'\
 		-s '//gameList/game[last()]' -t elem -n 'rating'      -v '3.0'\
 		-s '//gameList/game[last()]' -t elem -n 'releasedate' -v '2005'\
 		-s '//gameList/game[last()]' -t elem -n 'developer'   -v 'Poul'\

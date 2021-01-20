@@ -51,7 +51,7 @@ do
 done
 
 ### Add UQM to the game list
-if [ ! "$(grep -q 'Uqm' ${INSTALLPATH}/gamelist.xml)" ]
+if [ ! "$(grep -q 'The Ur-Quan Masters' ${INSTALLPATH}/gamelist.xml)" ]
 then
 	### Add to the game list
 	xmlstarlet ed --omit-decl --inplace \
@@ -61,6 +61,7 @@ then
 		-s '//gameList/game[last()]' -t elem -n 'desc'        -v 'Star Control II: The Ur-Quan Masters is the sequel to Star Control.'\
 		-s '//gameList/game[last()]' -t elem -n 'image'       -v './images/system-uqm.png'\
 		-s '//gameList/game[last()]' -t elem -n 'thumbnail'   -v './images/system-uqm-thumb.png'\
+                -s '//gameList/game[last()]' -t elem -n 'video'       -v './videos/system-uqm.mp4'\
 		-s '//gameList/game[last()]' -t elem -n 'rating'      -v '4.0'\
 		-s '//gameList/game[last()]' -t elem -n 'releasedate' -v '1992'\
 		-s '//gameList/game[last()]' -t elem -n 'developer'   -v 'Toys for Bob'\
