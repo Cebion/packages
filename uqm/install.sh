@@ -33,6 +33,8 @@ rm UQM.sh
 cat <<EOF >${INSTALLPATH}/"Uqm.sh"
 #!/bin/bash
 source /etc/profile
+/usr/bin/show_splash.sh "The Ur-Quan Masters"
+clear >/dev/console
 export SDL_GAMECONTROLLERCONFIG="$(cat /storage/roms/ports/UQM/gamecontrollerdb.txt)"
 /storage/roms/ports/UQM/uqm --logfile /storage/roms/ports/UQM/uqmlog.txt -x --contentdir=/storage/roms/ports/UQM/content --configdir=/storage/roms/ports/UQM/config
 unset SDL_GAMECONTROLLERCONFIG

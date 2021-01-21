@@ -35,6 +35,8 @@ rm ${PKG_FILE}
 cat <<EOF >${INSTALLPATH}/${PKG_NAME}/"solarus.sh"
 #!/bin/bash
 source /etc/profile
+/usr/bin/show_splash.sh "Solarus"
+clear >/dev/console
 export LD_LIBRARY_PATH=${INSTALLPATH}/${PKG_NAME}/data:/usr/lib
 cd ${INSTALLPATH}/${PKG_NAME}
   ./bin/solarus-run -joypad-deadzone=32767 -quit-combo=6+7 \$1

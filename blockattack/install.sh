@@ -32,6 +32,8 @@ rm ${PKG_FILE}
 cat <<EOF >${INSTALLPATH}/"Blockattack.sh"
 #!/bin/bash
 source /etc/profile
+/usr/bin/show_splash.sh "Block Attack -  Rise of the Blocks"
+clear >/dev/console
 export LD_LIBRARY_PATH=${INSTALLPATH}/${PKG_NAME}/lib:/usr/lib
 
 cd ${INSTALLPATH}/${PKG_NAME}
