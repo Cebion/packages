@@ -62,6 +62,7 @@ then
 		-s '//gameList/game[last()]' -t elem -n 'path'        -v './Blockattack.sh'\
 		-s '//gameList/game[last()]' -t elem -n 'name'        -v 'Block Attack -  Rise of the Blocks'\
 		-s '//gameList/game[last()]' -t elem -n 'desc'        -v 'A Tetris Attack Clone.'\
+		-s '//gameList/game[last()]' -t elem -n 'genre'        -v 'Puzzle'\
 		-s '//gameList/game[last()]' -t elem -n 'image'       -v './images/system-blockattack.png'\
 		-s '//gameList/game[last()]' -t elem -n 'thumbnail'   -v './images/system-blockattack-thumb.png'\
                 -s '//gameList/game[last()]' -t elem -n 'video'       -v './videos/system-blockattack.mp4'\

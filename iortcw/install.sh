@@ -61,6 +61,7 @@ then
 		-s '//gameList/game[last()]' -t elem -n 'path'        -v './Iortcw.sh'\
 		-s '//gameList/game[last()]' -t elem -n 'name'        -v 'Return to Castle Wolfenstein'\
 		-s '//gameList/game[last()]' -t elem -n 'desc'        -v 'Return to Castle Wolfenstein is a first-person shooter video game published by Activision.'\
+		-s '//gameList/game[last()]' -t elem -n 'genre'       -v 'Shooter'\
 		-s '//gameList/game[last()]' -t elem -n 'image'       -v './images/system-iortcw.png'\
 		-s '//gameList/game[last()]' -t elem -n 'thumbnail'   -v './images/system-iortcw-thumb.png'\
                 -s '//gameList/game[last()]' -t elem -n 'video'       -v './videos/system-iortcw.mp4'\
