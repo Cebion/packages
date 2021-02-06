@@ -70,6 +70,7 @@ then
 		-s '//gameList/game[last()]' -t elem -n 'path'        -v './Cdogs-sdl.sh'\
 		-s '//gameList/game[last()]' -t elem -n 'name'        -v 'C-Dogs'\
 		-s '//gameList/game[last()]' -t elem -n 'desc'        -v 'C-Dogs SDL is a classic overhead run-and-gun game.'\
+		-s '//gameList/game[last()]' -t elem -n 'genre'       -v 'Action'\
 		-s '//gameList/game[last()]' -t elem -n 'image'       -v './images/system-cdogs.png'\
 		-s '//gameList/game[last()]' -t elem -n 'thumbnail'   -v './images/system-cdogs-thumb.png'\
                 -s '//gameList/game[last()]' -t elem -n 'video'       -v './videos/system-cdogs.mp4'\

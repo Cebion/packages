@@ -72,6 +72,7 @@ then
 		-s '//gameList/game[last()]' -t elem -n 'path'        -v './Openomf.sh'\
 		-s '//gameList/game[last()]' -t elem -n 'name'        -v 'OpenOMF'\
 		-s '//gameList/game[last()]' -t elem -n 'desc'        -v 'OpenOMF is an Open Source remake of "One Must Fall 2097"'\
+		-s '//gameList/game[last()]' -t elem -n 'genre'       -v 'Fighting'\
 		-s '//gameList/game[last()]' -t elem -n 'image'       -v './images/system-openomf.png'\
 		-s '//gameList/game[last()]' -t elem -n 'thumbnail'   -v './images/system-openomf-thumb.png'\
                 -s '//gameList/game[last()]' -t elem -n 'video'       -v './videos/system-openomf.mp4'\

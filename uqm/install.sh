@@ -61,6 +61,7 @@ then
 		-s '//gameList/game[last()]' -t elem -n 'path'        -v './Uqm.sh'\
 		-s '//gameList/game[last()]' -t elem -n 'name'        -v 'The Ur-Quan Masters'\
 		-s '//gameList/game[last()]' -t elem -n 'desc'        -v 'Star Control II: The Ur-Quan Masters is the sequel to Star Control.'\
+		-s '//gameList/game[last()]' -t elem -n 'genre'       -v 'Action-Adventure'\
 		-s '//gameList/game[last()]' -t elem -n 'image'       -v './images/system-uqm.png'\
 		-s '//gameList/game[last()]' -t elem -n 'thumbnail'   -v './images/system-uqm-thumb.png'\
                 -s '//gameList/game[last()]' -t elem -n 'video'       -v './videos/system-uqm.mp4'\
